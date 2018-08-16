@@ -1,0 +1,17 @@
+h1{
+	text-align: center;
+}
+h2{
+	color: #1223cd;
+	font-style: italic;
+
+}
+.image01{
+	
+	border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200;
+
+ 
+}
