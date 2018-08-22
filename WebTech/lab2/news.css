@@ -10,8 +10,34 @@ h2{
 	
 	border: 1px solid #ddd;
     border-radius: 10px;
+    margin: 0 auto;
     padding: 5px;
-    width: 200;
+    width: 250px;
+    height: 210px;
 
- 
+}
+.image02{
+	float: left;
+	border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px;
+    width: 280px;
+    height: 200px;
+
+}
+
+.image03{
+	float: right;
+	border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px;
+    width: 280px;
+    height: 200px;
+
+}
+.allImage{
+width:100%;
+ display: inline;
 }
