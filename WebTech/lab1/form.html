@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Details</title>
+</head>
+<body bgcolor="#E8EAF6">
+<h3>Customer Details</h3>
+<form>
+	First Name:<input type="text" name="firstName">
+	Initials:<input type="text" name="initials"><br><br>
+	Surname: <input type="text" name="surname"><br><br>
+	Company: <input type="text" name="company">
+	Age Group: <select name="AgeGroup">
+		<option value="18-25">18-25</option>
+		<option value="26-35">26-35</option>
+	</select><br><br>
+	Position: <input type="text" name="position">
+	Date Joined <input type="date" id="start" name="trip"
+               value="2018-07-22"
+               min="2018-01-01" max="2018-12-31" /><br><br>
+    Title: <input type="text" name="title">
+    Group: <select name="group">
+    	<option value="Support">Support</option>
+    	<option value="Development">Development</option>
+    	<option value="HR">HR</option>
+    	<option value="Sales">Sales</option>
+    	<option value="Marketing">Marketing</option>
+    </select><br><br>
+    Notes:<br>
+    <textarea name="Notes" rows="15" cols="155"></textarea><br><br>
+    <div align="center">
+    <button type="button" onclick="location.href = 'result.html';">Submit</button>
+    <button type="reset">Reset</button>
+    </div>
+</form>
+</body>
+</html>
