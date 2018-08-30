@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Form Validation</title>
+  <script language="JavaScript">
+    function showInputID() {
+         let innerHTML;
+        var name= String(document.getElementById("field_name").value) ;
+        var city=String(document.getElementById("field_city").value);
+        var gen=String(document.getElementById("field_gender").value);
+        var comm=String(document.getElementById("field_comments").value);
+        innerHTML=`Name:${name} <br>City:${city} <br>Gender:${gen} <br>Comments:${comm}`;
+        document.getElementById('use_id').innerHTML =  innerHTML;      
+    }
+  </script>
+</head>
+<body>
+
+
+</div>
+
+    <form>
+      <label>Name</label>
+      <input type="text" name="name" id="field_name"><br><br>
+      <label>City</label>
+     <input type="text" name="city" id="field_city"><br><br>
+      <label>Gender</label>
+      <select name="gender" id="field_gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <label>Comments</label>
+      <textarea style="width: 150px; height: 50px" id="field_comments"></textarea><br><br>
+    </form>
+    <button type="submit" onclick="showInputID();">Submit</button>
+    
+    
+  </div>
+  <p></p>
+  <label>Using ID:</label>
+  <p id="use_id"></p>
+
+</body>
+</html>
