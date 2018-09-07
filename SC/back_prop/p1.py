@@ -17,7 +17,7 @@ X=df.iloc[:,:df.shape[1]-1]
 Y=df.iloc[:,df.shape[1]-1]
 
 
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.3,random_state=1000)
+
 def sigmoid(val):
 	return 1/(1+np.exp(-val))
 
@@ -47,23 +47,16 @@ def train(X_train,Y_train,hu):
 			bias1=np.array(bias1)+rate*np.array(hidden_error)
 			bias2=np.array(bias2)+rate*np.array(output_error)
 		loop=loop-1
-	print("input to hidden weights:")
-	print(weights)
-	print("hidden to output weights:")
-	print(weights2)
-	print("hidden layer bias:")
-	print(bias1)
-	print("output layer bias:")
-	print(bias2)
+	#
 	return weights,weights2,bias1,bias2
 
 def testing(X_test,Y_test,w1,w2,b1,b2):
 	count=0
-	truep=0
-	falsep=0
-	falsen=0
-	truen=0
-	print("Testing:")
+	truep=0.01
+	falsep=0.01
+	falsen=0.01
+	truen=0.01
+	#print("Testing:")
 	for i in range(X_test.shape[0]):
 		cr=list(X_test.iloc[i])
 		y=Y_test.iloc[i]
@@ -88,7 +81,10 @@ def testing(X_test,Y_test,w1,w2,b1,b2):
 		error=y-prediction
 		if(error==0):
 			count+=1
+
+	print(float(count/X_test.shape[0]))
 	#print(" ")
+
 	return float(count/X_test.shape[0]),float(truep/(truep+falsep)),float(truen/(truen+falsen)),float(truep/(truep+falsen)),float(truen/(truen+falsep))
 
 sumacc=0
@@ -97,6 +93,7 @@ sumpren=0
 sumrecp=0
 sumrecn=0
 for i in range(10):
+	X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.3)
 	w1,w2,b1,b2=train(X_train,Y_train,5)
 	acc,prep,pren,recp,recn=testing(X_test,Y_test,w1,w2,b1,b2)
 	sumacc+=acc

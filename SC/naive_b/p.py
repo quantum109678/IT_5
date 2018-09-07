@@ -17,10 +17,11 @@ X=df.iloc[:,:df.shape[1]-1]
 Y=df.iloc[:,df.shape[1]-1]
 
 
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2)
+
 
 
 def train(X_train,Y_train):
+	#print("Training with 80% of the data set:")
 	size=X_train.shape[0]
 	count1=0
 	count0=0
@@ -60,17 +61,18 @@ def train(X_train,Y_train):
 		p3[j]=float(v1y0/count0)
 		p4[j]=float(v1y1/count1)
 
-	print(p1,p2,p3,p4)
+	#print(p1,p2,p3,p4)
 	return mp0,mp1,p1,p2,p3,p4
 
 def testing(X_test,Y_test,mp0,mp1,p1,p2,p3,p4):
+	#print("Testing:")
 	truep=0
 	falsep=0
 	falsen=0
 
 	count=0
 
-	print("p0 :{} p1 :{}".format(mp0,mp1))
+	#print("p0 :{} p1 :{}".format(mp0,mp1))
 	size=X_test.shape[0]
 	for i in range(X_test.shape[0]):
 		cr=X_test.iloc[i]
@@ -99,7 +101,7 @@ def testing(X_test,Y_test,mp0,mp1,p1,p2,p3,p4):
 			prediction=0
 		else:
 			prediction=1
-		print("Predicted value:{} whereas Actual value:{}".format(prediction,Y_test.iloc[i]))
+		#print("Predicted value:{} whereas Actual value:{}".format(prediction,Y_test.iloc[i]))
 		if(prediction==y and prediction==1):
 			truep+=1
 		if(prediction!=y and prediction==1):
@@ -108,9 +110,22 @@ def testing(X_test,Y_test,mp0,mp1,p1,p2,p3,p4):
 			falsen+=1
 		if(prediction==Y_test.iloc[i]):
 			count+=1
-	print("Accuracy:{} Precison:{} Recall:{}".format(float(count/size),float(truep/(truep+falsep)),float(truep/(truep+falsen))))
-	return
+	
+	return float(count/size),float(truep/(truep+falsep)),float(truep/(truep+falsen))
 
+sumacc=0
+sumpre=0
+sumrec=0
+for i in range(10):
+	X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.3,random_state=1000)
+	mp0,mp1,p0,p1,p2,p3=train(X_train,Y_train)
+	acc,pre,rec=testing(X_test,Y_test,mp0,mp1,p0,p1,p2,p3)
+	sumacc+=acc
+	sumpre+=pre
+	sumrec+=rec
+	
 
-mp0,mp1,p0,p1,p2,p3=train(X_train,Y_train)
-testing(X_test,Y_test,mp0,mp1,p0,p1,p2,p3)
+print("Accuracy is:{}".format(sumacc/10))
+print("Precison is:",sumpre/10)
+print("Recall is:",sumrec/10)
+
