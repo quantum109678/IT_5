@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Price Form</title>
+</head>
+<body>
+	<form name="price-form" id="price-form" onsubmit="return false">
+		<fieldset>
+			<legend>Price Form</legend>
+			<table id="content-table">
+				<tr id="row-1">
+					<th style="text-align: center;">Items</th>
+					<th style="text-align: center;">Price/kg</th>
+					<th style="text-align: center;">Quantity (in kgs)</th>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-2">
+					<td style="text-align: center;">Item 1</td>
+					<td id="price-1" style="text-align: center;">100</td>
+					<td>
+						<input type="number" name="qty-1" id="qty-1" oninput="validateForm()">
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-3">
+					<td style="text-align: center;">Item 2</td>
+					<td id="price-2" style="text-align: center;">40</td>
+					<td>
+						<input type="number" name="qty-2" id="qty-2" oninput="validateForm()">
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-4" style="align-content: center;">
+					<td style="text-align: center;">Item 3</td>
+					<td id="price-3" style="text-align: center;">25</td>
+					<td>
+						<input type="number" name="qty-3" id="qty-3" oninput="validateForm()">
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-5">
+					<td></td>
+					<td>
+						<button onclick="validateForm()">Click for total amount</button>
+					</td>
+					<td>
+						<textarea readonly="true" rows="1px" cols="23px" id="total-price"></textarea>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+		let price1 = document.getElementById("price-1").innerHTML;
+		let price2 = document.getElementById("price-2").innerHTML;
+		let price3 = document.getElementById("price-3").innerHTML;
+		let qty1 = document.getElementById("qty-1");
+		let qty2 = document.getElementById("qty-2");
+		let qty3 = document.getElementById("qty-3");
+
+		function validateForm() {
+			var sum = (price1 * parseInt(qty1.value, 10)) + (price2 * parseInt(qty2.value, 10)) + (price3 * parseInt(qty3.value, 10));
+
+			document.getElementById("total-price").value = sum.toString();
+		}
+	</script>
+</body>
+</html>

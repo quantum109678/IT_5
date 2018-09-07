@@ -6,12 +6,27 @@
   <script language="JavaScript">
     function showInput() {
          let innerHTML;
+         document.ge
         var name= String(document.getElementById("field_name").value) ;
         var city=String(document.getElementById("field_city").value);
         var gen=String(document.getElementById("field_gender").value);
         var comm=String(document.getElementById("field_comments").value);
         innerHTML=`Name:${name} <br>City:${city} <br>Gender:${gen} <br>Comments:${comm}`;
-        document.getElementById('use_id').innerHTML =  innerHTML;      
+        document.getElementById('use_id').innerHTML =  innerHTML;  
+
+        var name= String(document.getElementsByName("name")[0].value) ;
+        var city=String(document.getElementsByName("city")[0].value);
+        var gen=String(document.getElementsByName("gender")[0].value);
+        var comm=String(document.getElementsByName("comments")[0].value);
+        innerHTML=`Name:${name} <br>City:${city} <br>Gender:${gen} <br>Comments:${comm}`;
+        document.getElementById('use_name').innerHTML =  innerHTML;   
+
+        var name= String(document.getElementsByTagName('input')[0].value) ;
+        var city=String(document.getElementsByTagName('input')[1].value);
+        var gen=String(document.getElementsByTagName('select')[0].value);
+        var comm=String(document.getElementsByTagName('textarea')[0].value);
+        innerHTML=`Name:${name} <br>City:${city} <br>Gender:${gen} <br>Comments:${comm}`;
+        document.getElementById('use_DOM').innerHTML =  innerHTML;  
     }
   </script>
 </head>
@@ -31,7 +46,7 @@
         <option value="Female">Female</option>
       </select>
       <label>Comments</label>
-      <textarea style="width: 150px; height: 50px" id="field_comments"></textarea><br><br>
+      <textarea style="width: 150px; height: 50px" name="comments" id="field_comments"></textarea><br><br>
     </form>
     <button type="submit" onclick="showInput();">Submit</button>
     
@@ -40,6 +55,10 @@
   <p></p>
   <label>Using ID:</label>
   <p id="use_id"></p>
+  <label>Using Name:</label>
+  <p id="use_name"></p>
+  <label>Using DOM address:</label>
+  <p id="use_DOM"></p>
 
 </body>
 </html>

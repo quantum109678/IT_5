@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Guestbook</title>
+</head>
+<body>
+	<form name="guestbook-form" id="guestbook-form" onsubmit="return false">
+		<fieldset>
+			<legend>Guestbook</legend>
+			<table id="content-table">
+				<tr id="row-1">
+					<td style="text-align: right;">
+						<label id="first-name-label" for="first-name-field">First Name</label>
+					</td>
+					<td>
+						<input type="text" name="first-name" id="first-name-field" maxlength="20">
+					</td>
+					<td style="text-align: right;">
+						<label id="last-name-label" for="last-name-field">Last Name</label>
+					</td>
+					<td>
+						<input type="text" name="last-name" id="last-name-field" maxlength="20">
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-2">
+					<td style="text-align: right;">
+						<label id="email-label" for="email-field">E-Mail</label>
+					</td>
+					<td>
+						<input type="email" name="email" id="email-field">
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-3">
+					<td style="text-align: right;">
+						<label id="gender-label" for="gender-field">Gender</label>
+					</td>
+					<td>
+						<input type="radio" name="gender" id="male" value="male" checked> Male<br>
+  						<input type="radio" name="gender" id="female" value="female"> Female<br>
+  						<input type="radio" name="gender" id="other" value="other"> Other
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-4">
+					<td style="text-align: right;">
+						<label id="comments-label" for="comments-field">Comments</label>
+					</td>
+					<td>
+						<textarea cols="33" rows="5" id="comments-field" name="comments"></textarea>
+					</td>
+				</tr>
+				<tr id="blank-row" style="height: 10px;"></tr>
+				<tr id="row-5">
+					<td style="align-content: center;">
+						<button id="submit-button" onclick="validateForm()">Submit</button>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<script type="text/javascript">
+		let firstNameInput = document.getElementById('first-name-field');
+		let lastNameInput = document.getElementById('last-name-field');
+		let emailInput = document.getElementById('email-field');
+		let male = document.getElementById('male');
+		let female = document.getElementById('female');
+		let other = document.getElementById('other');
+		let commentsInput = document.getElementById('comments-field');
+
+		function validateForm() {
+			let firstName = firstNameInput.value;
+			let lastName = lastNameInput.value;
+			let emailId = emailInput.value;
+			var gender;
+			if (male.checked) {
+				gender = "Male";
+			}
+			else if (female.checked) {
+				gender = "Female";
+			}
+			else {
+				gender = "Other";
+			}
+			let comments = commentsInput.value;
+
+			if (firstName === "" || lastName === "" || emailId === "") {
+				alert("Do not leave fields blank!");
+			}
+			else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(emailId)) {
+				alert("Invalid email id");
+			}
+			else {
+				alert("Name: " + firstName + " " + lastName + "\n" 
+					+ "Email Id: " + emailId + "\n" 
+					+ "Gender: " + gender + "\n" 
+					+ "Comments: " + comments);
+			}
+		}
+	</script>
+</body>
+</html>
