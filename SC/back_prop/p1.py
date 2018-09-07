@@ -62,6 +62,7 @@ def testing(X_test,Y_test,w1,w2,b1,b2):
 	truep=0
 	falsep=0
 	falsen=0
+	truen=0
 	print("Testing:")
 	for i in range(X_test.shape[0]):
 		cr=list(X_test.iloc[i])
@@ -74,24 +75,39 @@ def testing(X_test,Y_test,w1,w2,b1,b2):
 			prediction=1
 		else:
 			prediction=0
-		string="Expected:"+str(prediction)+" Actual:"+str(y)
+		#string="Expected:"+str(prediction)+" Actual:"+str(y)
 		if(prediction==y and prediction==1):
 			truep+=1
 		if(prediction!=y and prediction==1):
 			falsep+=1
 		if(prediction!=y and prediction==0):
 			falsen+=1
-		print(string)
+		if(prediction==y and prediction==0):
+			truen+=1
+		#print(string)
 		error=y-prediction
 		if(error==0):
 			count+=1
-	print(" ")
-	return float(count/X_test.shape[0]),float(truep/(truep+falsep)),float(truep/(truep+falsen))
-w1,w2,b1,b2=train(X_train,Y_train,5)
-accuracy,precison,recall=testing(X_test,Y_test,w1,w2,b1,b2)
-print("Accuracy is:{}".format(accuracy))
-print("Precison is:{}".format(precison))
-print("Recall is:{}".format(recall))
+	#print(" ")
+	return float(count/X_test.shape[0]),float(truep/(truep+falsep)),float(truen/(truen+falsen)),float(truep/(truep+falsen)),float(truen/(truen+falsep))
+
+sumacc=0
+sumprep=0
+sumpren=0
+sumrecp=0
+sumrecn=0
+for i in range(10):
+	w1,w2,b1,b2=train(X_train,Y_train,5)
+	acc,prep,pren,recp,recn=testing(X_test,Y_test,w1,w2,b1,b2)
+	sumacc+=acc
+	sumprep+=prep
+	sumpren+=pren
+	sumrecp+=recp
+	sumrecn+=recn
+
+print("Accuracy is:{}".format(sumacc/10))
+print("Precison is:(+)",sumprep/10,"(-)",sumpren/10)
+print("Recall is:(+)",sumrecp/10,"(-)",sumrecn/10)
 
 
 
