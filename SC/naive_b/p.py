@@ -55,10 +55,10 @@ def train(X_train,Y_train):
 				c1+=1
 			if X_train.iloc[k][j]==0:
 				c0+=1
-		p1[j]=float(v0y0/c0)
-		p2[j]=float(v0y1/c0)
-		p3[j]=float(v1y0/c1)
-		p4[j]=float(v1y1/c1)
+		p1[j]=float(v0y0/count0)
+		p2[j]=float(v0y1/count1)
+		p3[j]=float(v1y0/count0)
+		p4[j]=float(v1y1/count1)
 
 	print(p1,p2,p3,p4)
 	return mp0,mp1,p1,p2,p3,p4
@@ -90,11 +90,11 @@ def testing(X_test,Y_test,mp0,mp1,p1,p2,p3,p4):
 				prod2=prod2*p4[j]
 				str0+=str(p3[j])+" "
 				str1+=str(p4[j])+" "
-		#print("prod1 val:{} prod2 val:{}".format(str0,str1))
+	
 		prediction=-1
 		x1=prod1
 		x2=prod2
-		print("x1:{} x2:{}".format(x1,x2))
+		#print("x1:{} x2:{}".format(x1,x2))
 		if(x1>x2):
 			prediction=0
 		else:
