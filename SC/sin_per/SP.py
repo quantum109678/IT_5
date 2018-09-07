@@ -51,6 +51,10 @@ class Perceptron:
 	def test(self,sX,sY):
 		tot=sX.shape[0]
 		count=0
+		truep=0
+		truen=0
+		falsep=0
+		falsen=0
 		for i in range(sX.shape[0]):
 			curr=list(sX.iloc[i])
 			curry=sY.iloc[i]
@@ -59,11 +63,23 @@ class Perceptron:
 				cost=1
 			else:
 				cost=0
-			print("Predicted:",str(self.class_labels[cost]),"Actual:",str(self.class_labels[curry]))
+			#print("Predicted:",str(self.class_labels[cost]),"Actual:",str(self.class_labels[curry]))
 			error=curry-cost
 			if error==0:
 				count=count+1
+			if(cost==curry and cost==1):
+				truep+=1
+			if(cost!=curry and cost==1):
+				falsep+=1
+			if(cost!=curry and cost==0):
+				falsen+=1
+			if(cost==curry and cost==0):
+				truen+=1
+		#print(string)
+
 		print("Accuracy=",float(count/tot))
+		print("Precision:",float(truep/(truep+falsep)))
+		print("Recall:",float(truep/(truep+falsen)))
 
 def main():
 	name=input("Enter the file name:")
