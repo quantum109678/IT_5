@@ -27,9 +27,12 @@ Y=df.iloc[:,df.shape[1]-1]
 
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2)
 k=11
-L=[]
+
 
 def predict(X_train,X_test,Y_train,Y_test):
 	for i in range(X_test.shape[0]):
+		L=[]
 		test_row=list(X_test.iloc[i])
+		curr_y=Y_test.iloc[i]
+		for j in range(X_train.shape[0])
 		
