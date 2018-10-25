@@ -1,0 +1,66 @@
+bookticket {
+	line-height: 30px;
+	margin:20px;
+	display: block;
+	border: solid;
+	border-width: 2px;
+	border-color: #ff9900;
+	
+}
+bind {
+	display: block;
+	margin-top: 10px;
+}
+name {
+	margin-left: 50px;
+	color: blue;
+	font-weight: bold;
+
+}
+place
+{
+	color: blue;
+	font-weight: bold;
+	margin-left: 100px;
+
+}
+datetime{
+	margin-left: 50px;
+	color: blue;
+	font-weight: bold;
+}
+show{
+	padding-right: 100px;
+}
+
+genre{
+	font-style: italic;
+	color: maroon;
+	display: block;
+	margin-left: 100px;
+}
+performers {
+	display: block;
+	margin-left: 150px;
+	color: orange;
+}
+per {
+	padding: 50px;
+}
+ticket {
+	display: block;
+	margin-left: 150px;
+	color: orange;
+	padding-left: 50px;
+}
+seller {
+	display: block;
+	font-weight: bold;
+	margin-left: 100px;
+}
+
+discount{
+	font-weight: bold;
+	margin-left: 100px;
+	margin-bottom: 20px;
+}

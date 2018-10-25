@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="ticket.css"?>
+<?xml-stylesheet type="text/xsl" href="template.xsl"?>
+<?xml-stylesheet type="text/xsl" href="template2.xsl"?>
+<concert>
+<bookticket>
+	<bind>
+	<name>ColdPlay</name>
+	<place>
+		<ven>Grand stadium</ven>
+		<addr>Bangalore</addr>
+		<cont>grand@gmail.com</cont>
+	</place>
+	</bind>
+	<datetime>
+		<show>
+			<date>5</date>
+			<month>November</month>
+			<time>18:00</time>
+		</show>
+		<show><date>7</date>
+			<month>December</month>
+			<time>19:00</time>
+		</show>
+	</datetime>
+	<genre>Pop</genre>
+	<performers>
+		<per>
+			<fname>Christopher</fname>
+			<lnanme>Martin</lnanme>
+			<role>Pianist</role>
+		</per>
+		<per>
+			<fname>Guy</fname>
+			<lnanme>Berryman</lnanme>
+			<role>Guitarist</role>
+		</per>
+		<per>
+			<fname>Jonny</fname>
+			<lnanme>Buckland</lnanme>
+			<role>Lead Guitar</role>
+		</per>
+	</performers>
+	<ticktype>
+		<ticket>
+		<type>Normal</type>
+		<price>500</price>
+		</ticket>
+		<ticket>
+		<type>Gold</type>
+		<price>2000</price>
+		</ticket>
+	</ticktype>
+	<seller>
+		<sname>Star Sellers</sname>
+		<email>starselelr@gmail.com</email>
+		<pnum>987654321</pnum>
+		<addr>#456, JKL street, R area</addr>
+	</seller>
+	<discount>0</discount>
+</bookticket>
+
+<bookticket>
+	<bind>
+	<name>Coke studio</name>
+	<place>
+		<ven>TMA Pai</ven>
+		<addr>Mangalore</addr>
+		<cont>tmemangalore@gmail.com</cont>
+	</place>
+	</bind>
+	<datetime>
+		<show><date>5</date>
+			<month>April</month>
+			<time>18:00</time></show>
+	</datetime>
+	<genre>Classical</genre>
+	<performers>
+		<per>
+			<fname>John</fname>
+			<lnanme>Dean</lnanme>
+			<role>Vocal</role>
+		</per>
+		<per>
+			<fname>Ram</fname>
+			<lnanme>Charan</lnanme>
+			<role>Tabla</role>
+		</per>
+	</performers>
+	<ticktype>
+		<ticket>
+		<type>Normal</type>
+		<price>90</price>
+		</ticket>
+	</ticktype>
+	<seller>
+		<sname>Star Sellers</sname>
+		<email>starselelr@gmail.com</email>
+		<pnum>987654321</pnum>
+		<addr>#456, JKL street, R area</addr>
+	</seller>
+	<discount>20</discount>
+</bookticket>
+
+<bookticket>
+	<bind>
+	<name>Imagine dragons</name>
+	<place>
+		<ven>ABC stadium</ven>
+		<addr>Mangalore</addr>
+		<cont>123456789</cont>
+	</place>
+	</bind>
+	<datetime>
+		<show><date>9</date>
+			<month>April</month>
+			<time>18:00</time></show>
+	</datetime>
+	<genre>Instrumental</genre>
+	<performers>
+		<per>
+			<fname>Christopher</fname>
+			<lnanme>Martin</lnanme>
+			<role>Pianist</role>
+		</per>
+		<per>
+			<fname>Guy</fname>
+			<lnanme>Berryman</lnanme>
+			<role>Guitarist</role>
+		</per>
+		<per>
+			<fname>Jonny</fname>
+			<lnanme>Buckland</lnanme>
+			<role>Lead Guitar</role>
+		</per>
+	</performers>
+	<ticktype>
+		<ticket>
+		<type>Silver</type>
+		<price>95</price>
+		</ticket>
+		<ticket>
+		<type>Gold</type>
+		<price>250</price>
+		</ticket>
+	</ticktype>
+	<seller>
+		<sname>Star Sellers</sname>
+		<email>starselelr@gmail.com</email>
+		<pnum>987654321</pnum>
+		<addr>#456, JKL street, R area</addr>
+	</seller>
+	<discount>0</discount>
+</bookticket>
+</concert>
